@@ -26,3 +26,8 @@
 - vite.config.js: proxy, sourcemap
 - index.html: 4 container, Cinzel/Inter fonts, mobile viewport
 - 13 src alt dizin, client/public/maps/
+
+### P0.05 — Puppeteer + benchmark + smoke + deploy scriptleri
+- benchmark.js: hrtime + heap tracking + PERF-LOG.md append
+- scripts/smoke.sh: 4-step pipeline (shared, unit, integration, build)
+- scripts/deploy.sh: full deploy pipeline

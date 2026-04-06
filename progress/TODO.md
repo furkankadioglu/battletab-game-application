@@ -50,11 +50,11 @@
 - [x] client/src/ dizin yapisi
 - [x] Kabul: cd client && npm run dev calisir
 
-### P0.05 — Puppeteer + benchmark + smoke + deploy scriptleri
-- [ ] tests/visual/screenshot.test.js (mevcut, genislet)
-- [ ] tests/perf/benchmark.js (mevcut, genislet)
-- [ ] scripts/smoke.sh, scripts/deploy.sh
-- [ ] Kabul: bash scripts/smoke.sh calisir
+### P0.05 — Puppeteer + benchmark + smoke + deploy scriptleri [DONE]
+- [x] tests/visual/screenshot.test.js (mevcut)
+- [x] tests/perf/benchmark.js (zamanlama + heap olcumu eklendi)
+- [x] scripts/smoke.sh (shared + unit + integration + client build)
+- [x] Kabul: bash scripts/smoke.sh exit 0
 
 ### P0.06 — Ilk unit test: gameConstants dogrulama
 - [ ] tests/unit/gameConstants.test.js: sabitlerin tanimliligi, tipi, degerleri

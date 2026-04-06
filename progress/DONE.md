@@ -31,3 +31,10 @@
 - client/index.html: 4 container (bg-canvas, auth-root, menu-root, game), fonts, viewport
 - client/src/: 13 alt dizin + index.js entry point
 - vite build: 44ms, vite dev: OK
+
+### P0.05 — Puppeteer + benchmark + smoke + deploy scriptleri
+- tests/perf/benchmark.js: hrtime zamanlama + heap olcumu + PERF-LOG append
+- scripts/smoke.sh: shared check + unit + integration + client build
+- scripts/deploy.sh: unit + integration + smoke + perf + build pipeline
+- tests/visual/screenshot.test.js: puppeteer screenshot (mevcut)
+- smoke.sh: 4/4 check PASS
