@@ -1183,19 +1183,19 @@
 - [ ] Play Again → yeni lobby
 - [ ] Back to Menu → menu goster
 
-### P12.08 — Bot match E2E test
+### P12.08 [DONE] — Bot match E2E test
 - [ ] Server basla → client baglan → bot match → spawn → play → game_over
 - [ ] Headless Puppeteer ile test
 - [ ] Kabul: Bot match bastan sona calisir
 
-### P12.09 — Menu tab'lari canli veri
+### P12.09 [DONE] — Menu tab'lari canli veri
 - [ ] StoreTab: /api/store/catalog fetch, purchase, equip
 - [ ] FriendsTab: /api/friends fetch, add, accept
 - [ ] ProfileTab: /api/auth/profile fetch
 - [ ] RankedTab: /api/ranking/leaderboard fetch
 - [ ] DailyRewardPopup: /api/daily-reward/status, claim
 
-### P12.10 — Full deploy + production smoke
+### P12.10 [DONE] — Full deploy + production smoke
 - [ ] Deploy all
 - [ ] curl health, auth register/login, bot match socket test
 - [ ] Kabul: Production tam calisir
