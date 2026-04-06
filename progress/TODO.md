@@ -713,7 +713,7 @@
 ## PHASE 8: Game Over & Ranking
 > Oyun sonu ekrani, ELO, diamond, leaderboard.
 
-### P8.01 — GameOverScene.js (sonuc ekrani)
+### P8.01 [DONE] — GameOverScene.js (sonuc ekrani)
 - [ ] client/src/scenes/GameOverScene.js:
   - init(data): { winnerId, winnerUsername, players, stats, mode, rankingData, diamondReward }
   - Victory screen (winner): "Victory!" gold text, confetti particle effect
@@ -731,7 +731,7 @@
   - Confetti: 100+ particles, random colors, gravity fall, 5s duration
 - [ ] Kabul: Victory/defeat ekrani, stats, confetti, buttons calisir
 
-### P8.02 — RankingService.js (ELO sistemi)
+### P8.02 [DONE] — RankingService.js (ELO sistemi)
 - [ ] server/src/ranking/RankingService.js:
   - In-memory: playerRatings Map<userId, rating>
   - Starting rating: 1000 (Gold league)
@@ -755,7 +755,7 @@
   - GET /api/ranking/league-stats
 - [ ] Kabul: ELO dogru hesaplanir, leaderboard calisir
 
-### P8.03 — Unit + Integration: ELO, diamonds
+### P8.03 [DONE] — Unit + Integration: ELO, diamonds
 - [ ] tests/unit/server/ranking.test.js:
   - ELO hesaplamasi: winner +, loser -
   - K_FACTOR=32 ile expected score
@@ -768,7 +768,7 @@
   - League promotion reward
 - [ ] Kabul: 15+ assertion PASS
 
-### P8.04 — Game over screenshot + perf
+### P8.04 [DONE] — Game over screenshot + perf
 - [ ] Puppeteer: victory, defeat, scoreboard ekranlari
 - [ ] Perf: game over render < 500ms
 - [ ] Kabul: Screenshots kayitli
