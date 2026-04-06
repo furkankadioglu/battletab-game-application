@@ -138,29 +138,29 @@
 
 ## PHASE 4: Core Game Engine
 
-### P4.01 — Region.js + Player.js + Army.js entities
-### P4.02 — GameState.js container
-### P4.03 — MapGenerator.js (GeoJSON → regions, neighbors, terrain, gates, spawns)
-### P4.04 — Region types + neighbors (7 tip, production rates, speed modifiers)
-### P4.05 — Unit: MapGenerator (10+ assertion)
-### P4.06 — GateSystem.js (portal pair teleportation)
-### P4.07 — Unit: GateSystem
-### P4.08 — ProductionSystem.js (per-tick production, nuclear disable, max HP 300)
-### P4.09 — Unit: ProductionSystem
-### P4.10 — MovementSystem.js (25px/s, terrain speed, waypoints, attrition)
-### P4.11 — Unit: MovementSystem
-### P4.12 — CollisionSystem.js (20px range, power variation +/-20%)
-### P4.13 — Unit: CollisionSystem
-### P4.14 — ConquestSystem + SiegeSystem (tug-of-war, 2.0/s damage, defense 20%)
-### P4.15 — Unit: Conquest + Siege
-### P4.16 — VisibilitySystem.js (BFS depth-2, gate extension, stealth)
-### P4.17 — Unit: VisibilitySystem
-### P4.18 — PathfindingSystem.js (Dijkstra, rocky avoidance, gate routing)
-### P4.19 — Unit: Pathfinding
-### P4.20 — GameLoop.js + WinCondition.js (10 tps, system order, elimination)
-### P4.21 — Unit: GameLoop, WinCondition
-### P4.22 — Integration: 100-tick headless sim
-### P4.23 — PERF: 1000-tick benchmark < 5s
+### P4.01 [DONE] — Region.js + Player.js + Army.js entities
+### P4.02 [DONE] — GameState.js container
+### P4.03 [DONE] — MapGenerator.js (GeoJSON → regions, neighbors, terrain, gates, spawns)
+### P4.04 [DONE] — Region types + neighbors (7 tip, production rates, speed modifiers)
+### P4.05 [DONE] — Unit: MapGenerator (10+ assertion)
+### P4.06 [DONE] — GateSystem.js (portal pair teleportation)
+### P4.07 [DONE] — Unit: GateSystem
+### P4.08 [DONE] — ProductionSystem.js (per-tick production, nuclear disable, max HP 300)
+### P4.09 [DONE] — Unit: ProductionSystem
+### P4.10 [DONE] — MovementSystem.js (25px/s, terrain speed, waypoints, attrition)
+### P4.11 [DONE] — Unit: MovementSystem
+### P4.12 [DONE] — CollisionSystem.js (20px range, power variation +/-20%)
+### P4.13 [DONE] — Unit: CollisionSystem
+### P4.14 [DONE] — ConquestSystem + SiegeSystem (tug-of-war, 2.0/s damage, defense 20%)
+### P4.15 [DONE] — Unit: Conquest + Siege
+### P4.16 [DONE] — VisibilitySystem.js (BFS depth-2, gate extension, stealth)
+### P4.17 [DONE] — Unit: VisibilitySystem
+### P4.18 [DONE] — PathfindingSystem.js (Dijkstra, rocky avoidance, gate routing)
+### P4.19 [DONE] — Unit: Pathfinding
+### P4.20 [DONE] — GameLoop.js + WinCondition.js (10 tps, system order, elimination)
+### P4.21 [DONE] — Unit: GameLoop, WinCondition
+### P4.22 [DONE] — Integration: 100-tick headless sim
+### P4.23 [DONE] — PERF: 1000-tick benchmark < 5s
 
 ---
 

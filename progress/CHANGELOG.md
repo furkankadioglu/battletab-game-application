@@ -66,3 +66,12 @@
 - maps.js: Turkey (91), Poland (73), China (34) config
 - i18n: en.js + tr.js (120+ keys), t() function, useTranslation() hook
 - 73 unit tests PASS (11 new: i18n + maps)
+
+### PHASE 4 — Core Game Engine (P4.01-P4.23)
+- Entities: Region (production, speed, dirty tracking), Player (charges, cooldowns), Army (waypoints, attrition)
+- GameState: central container with CRUD, dirty tracking, neighbor/gate checks
+- 7 Systems: Production, Movement, Collision, Conquest, Siege, Gates, Visibility
+- GameLoop: 10 tps, 7-system tick order, delta cap
+- WinCondition: elimination + last-standing victory
+- 99 unit tests PASS (26 new engine tests)
+- Note: MapGenerator + PathfindingSystem deferred (needs GeoJSON processing)

@@ -126,3 +126,45 @@
 ### P3.06 — Unit tests: 11 new (73 total)
 - i18n: key count, consistency, templates, critical keys
 - maps: 3 maps, region counts, required fields
+
+## PHASE 4: Core Game Engine
+
+### P4.01 — Entities
+- Region.js: type, hp, owner, production, speed, serialize, dirty tracking
+- Player.js: charges, cooldowns, resources, serialize(self/enemy)
+- Army.js: waypoints, freeze, attrition, stuck timeout
+
+### P4.02 — GameState
+- Central container: regions/players/armies Maps, gates, phase, tick
+- CRUD + helper methods, dirty region tracking, neighbor/gate checks
+
+### P4.08 — ProductionSystem
+- Per-tick production with fractional accumulator
+- Interest mechanic (+1% HP/sec), city center bonus, HP decay over cap
+
+### P4.10 — MovementSystem
+- 25px/sec base, terrain speed modifiers, speed boost
+- Waypoint following, attrition (1/sec), stuck timeout (45s)
+
+### P4.12 — CollisionSystem
+- 20px collision range, larger army wins, equal = both die
+
+### P4.14 — ConquestSystem + SiegeSystem
+- Conquest: neutral capture, friendly reinforce, enemy → siege
+- Siege: tug-of-war, 10% damage/sec, defense bonus, wall bonus
+- Ability charge grant on first neutral capture
+
+### P4.16 — VisibilitySystem
+- BFS from owned regions (depth=2), gate tunnel extension
+- canAttack (depth=1), isRegionVisible
+
+### P4.06 — GateSystem
+- Portal pair teleportation, cooldown, gate_teleport events
+
+### P4.20 — GameLoop + WinCondition
+- 10 tps, 7-system tick order, delta time cap
+- Elimination (0 regions), victory (last standing)
+
+### P4.21 — Unit tests: 26 new (99 total)
+- Entities (9), GameState (4), Production (3), Collision (3)
+- Conquest (2), Siege (2), Visibility (2), WinCondition (2)
