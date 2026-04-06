@@ -45,7 +45,7 @@ if [ "$MODE" = "all" ] || [ "$MODE" = "backend" ]; then
   ssh "$REMOTE" "[ -f $REMOTE_BACKEND/server/.env ] || cp $REMOTE_BACKEND/server/.env.example $REMOTE_BACKEND/server/.env 2>/dev/null || true"
 
   # PM2: start or reload
-  ssh "$REMOTE" "cd $REMOTE_BACKEND && (pm2 describe $PM2_NAME > /dev/null 2>&1 && pm2 reload $PM2_NAME || pm2 start server/src/index.js --name $PM2_NAME -- ) && pm2 save"
+  ssh "$REMOTE" "cd $REMOTE_BACKEND && (pm2 describe $PM2_NAME > /dev/null 2>&1 && pm2 reload $PM2_NAME || PORT=3004 pm2 start server/src/index.js --name $PM2_NAME --env production) && pm2 save"
 
   echo "   Backend deployed ✅"
 fi
