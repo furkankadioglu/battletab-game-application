@@ -31,3 +31,7 @@
 - benchmark.js: hrtime + heap tracking + PERF-LOG.md append
 - scripts/smoke.sh: 4-step pipeline (shared, unit, integration, build)
 - scripts/deploy.sh: full deploy pipeline
+
+### P0.06 — Ilk unit test: gameConstants dogrulama
+- 26 test / 4 describe: gameConstants, eventTypes, regionTypes, version
+- Tum sabitler, tipler, degerler, formatlar dogrulandi

@@ -38,3 +38,11 @@
 - scripts/deploy.sh: unit + integration + smoke + perf + build pipeline
 - tests/visual/screenshot.test.js: puppeteer screenshot (mevcut)
 - smoke.sh: 4/4 check PASS
+
+### P0.06 — Ilk unit test: gameConstants dogrulama
+- tests/unit/shared/gameConstants.test.js: 26 test, 4 describe
+- gameConstants: 18 test (tick, map, production, army, speed, HP, siege, visibility, abilities, phases, buildings, colors, economy, ELO, network, mountain, gates)
+- eventTypes: 4 test (no empty, client events, server events, no duplicates)
+- regionTypes: 2 test (count, names)
+- version: 2 test (format, codename)
+- 26/26 PASS, 0.232s

@@ -56,10 +56,10 @@
 - [x] scripts/smoke.sh (shared + unit + integration + client build)
 - [x] Kabul: bash scripts/smoke.sh exit 0
 
-### P0.06 — Ilk unit test: gameConstants dogrulama
-- [ ] tests/unit/gameConstants.test.js: sabitlerin tanimliligi, tipi, degerleri
-- [ ] npx jest --testPathPattern=unit PASS
-- [ ] Kabul: 10+ assertion yesil
+### P0.06 — Ilk unit test: gameConstants dogrulama [DONE]
+- [x] tests/unit/shared/gameConstants.test.js: 26 test, 4 describe
+- [x] npx jest --testPathPattern=unit PASS (0.232s)
+- [x] Kabul: 26 assertion yesil
 
 ### P0.07 — smoke.sh gecmeli
 - [ ] smoke.sh calistir, tum adimlar gecmeli
