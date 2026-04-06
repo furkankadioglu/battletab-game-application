@@ -6,14 +6,14 @@
 const { gameConstants } = require('../../../../shared');
 
 class Region {
-  constructor({ id, type, hp, center, polygon, neighbors, resourceType, defenseBonus }) {
+  constructor({ id, type, hp, center, polygon, vertices, neighbors, resourceType, defenseBonus, ownerId }) {
     this.id = id;
     this.type = type || 'NORMAL';
     this.hp = hp || 0;
     this.maxHp = gameConstants.MAX_REGION_HP;
-    this.ownerId = null;
+    this.ownerId = ownerId || null;
     this.center = center || { x: 0, y: 0 };
-    this.polygon = polygon || [];
+    this.polygon = polygon || vertices || [];
     this.neighbors = neighbors || [];
     this.resourceType = resourceType || null;
     this.resourceRate = 0;
