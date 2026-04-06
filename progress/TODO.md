@@ -327,7 +327,7 @@
   - Auto-spawn selection: random available region after 1-4s stagger
 - [ ] Kabul: Bot mantikli hamleler yapar, ability kullanir
 
-### P5.07 — Unit: MapGenerator + Pathfinding
+### P5.07 [DONE] — Unit: MapGenerator + Pathfinding
 - [ ] tests/unit/server/mapGenerator.test.js:
   - GeoJSON parse, region count, neighbor connectivity
   - Terrain distribution percentages
@@ -340,7 +340,7 @@
   - Gate shortcut detection
 - [ ] Kabul: 15+ assertion PASS
 
-### P5.08 — Unit + Integration: GameRoom + Matchmaking + Bot
+### P5.08 [DONE] — Unit + Integration: GameRoom + Matchmaking + Bot
 - [ ] tests/unit/server/gameRoom.test.js:
   - Player color assignment (max RGB distance)
   - Phase transitions
@@ -355,7 +355,7 @@
   - Headless (no actual socket, simulated)
 - [ ] Kabul: 20+ assertion PASS
 
-### P5.09 — PERF: full bot match
+### P5.09 [DONE] — PERF: full bot match
 - [ ] node tests/perf/benchmark.js --task="bot-match"
   - Full bot match start → finish
   - Target: < 60s, < 100MB memory
@@ -367,7 +367,7 @@
 ## PHASE 6: Game Client
 > Phaser canvas render, camera, selection, army render, socket sync.
 
-### P6.01 — Phaser config + BootScene
+### P6.01 [DONE] — Phaser config + BootScene
 - [ ] client/src/index.js guncelle:
   - Phaser game config: type=AUTO, scale=RESIZE, bg=#134e6f
   - 3 active pointers, preventDefaultWheel, antialias ON
@@ -381,7 +381,7 @@
   - Asset preload: (henuz asset yok, placeholder)
 - [ ] Kabul: Phaser baslar, BootScene loading bar gorunur
 
-### P6.02 — SocketManager.js (client network)
+### P6.02 [DONE] — SocketManager.js (client network)
 - [ ] client/src/network/SocketManager.js:
   - Singleton pattern: let instance = null
   - connect(serverUrl): socket.io-client, transports=['websocket'], upgrade=false
@@ -396,7 +396,7 @@
   - disconnect()
 - [ ] Kabul: Socket connect/disconnect/reconnect, ping olcumu
 
-### P6.03 — GameSync.js (state synchronization)
+### P6.03 [DONE] — GameSync.js (state synchronization)
 - [ ] client/src/network/GameSync.js:
   - Constructor: GameSync(socketManager, onEvent)
   - registerListeners():
@@ -425,7 +425,7 @@
   - Battle stats tracking: regionsCaptured, armiesSent, peakPower
 - [ ] Kabul: Tum server eventler dogru handle edilir, preview matching calisir
 
-### P6.04 — GameScene.js (ana oyun sahnesi)
+### P6.04 [DONE] — GameScene.js (ana oyun sahnesi)
 - [ ] client/src/scenes/GameScene.js:
   - init(gameData): { myPlayerId, map, players, armies, gameConfig, mode }
   - create():
@@ -442,7 +442,7 @@
   - Cleanup: destroy all systems on scene shutdown
 - [ ] Kabul: GameScene init ve update loop calisir
 
-### P6.05 — MapRenderer.js (region cizimi)
+### P6.05 [DONE] — MapRenderer.js (region cizimi)
 - [ ] client/src/systems/MapRenderer.js:
   - Constructor: MapRenderer(scene, regions, gates)
   - renderRegions():
@@ -473,7 +473,7 @@
   - Text scale: recalculate only on zoom change, invZoom = 1/cam.zoom
 - [ ] Kabul: Harita render, terrain ikonlari, glow, culling calisir
 
-### P6.06 — ArmyRenderer.js (ordu cizimi + client-side prediction)
+### P6.06 [DONE] — ArmyRenderer.js (ordu cizimi + client-side prediction)
 - [ ] client/src/systems/ArmyRenderer.js:
   - Constructor: ArmyRenderer(scene)
   - addArmy(armyData): create sprite with player color
@@ -500,7 +500,7 @@
   - Snap lock: army._snapUntil = Date.now() + 300 on gate teleport
 - [ ] Kabul: Army hareket, trail, death effect, freeze, snap calisir
 
-### P6.07 — CameraSystem.js (pan, zoom, pinch)
+### P6.07 [DONE] — CameraSystem.js (pan, zoom, pinch)
 - [ ] client/src/systems/CameraSystem.js:
   - Two-camera setup: main camera (world) + UI camera (fixed overlay)
   - Pan: mouse drag (right click or middle) / touch drag (1 finger)
@@ -512,7 +512,7 @@
   - Smooth zoom/pan with lerp
 - [ ] Kabul: Pan, zoom, pinch, auto-focus calisir
 
-### P6.08 — SelectionSystem.js (drag-to-send)
+### P6.08 [DONE] — SelectionSystem.js (drag-to-send)
 - [ ] client/src/systems/SelectionSystem.js:
   - Drag-to-send: pointer down on owned region → drag → release on target
   - Multi-region selection: hold and sweep across multiple owned regions (max 12)
@@ -528,7 +528,7 @@
   - Spawn phase: click to select spawn region (single click, no drag)
 - [ ] Kabul: Drag select, multi-select, preview, spawn selection calisir
 
-### P6.09 — GateRenderer.js + SiegeRenderer.js + DOMFogManager.js
+### P6.09 [DONE] — GateRenderer.js + SiegeRenderer.js + DOMFogManager.js
 - [ ] client/src/systems/GateRenderer.js:
   - Color-matched portal pairs at region centers
   - Portal animation: rotating/pulsing circle, color glow
@@ -551,7 +551,7 @@
   - Depth layering: 0=bg, 10-12=regions+glow, 15-16=highlights, 18=fog, 20+=text, 49-55=armies, 99-101=effects, 500-600=drag hints
 - [ ] Kabul: Gateler gorunur, siege animasyonu, fog dogru calisir
 
-### P6.10 — AbilityBar.js (5 yetenek slotu)
+### P6.10 [DONE] — AbilityBar.js (5 yetenek slotu)
 - [ ] client/src/systems/AbilityBar.js:
   - 5 ability slots: vertical bar, right side of screen
   - Phaser graphics-drawn icons:
@@ -569,7 +569,7 @@
   - Grayed out when 0 charges or on cooldown
 - [ ] Kabul: 5 slot, charge, cooldown, keyboard, targeting calisir
 
-### P6.11 — Unit: GameSync + SelectionSystem
+### P6.11 [DONE] — Unit: GameSync + SelectionSystem
 - [ ] tests/unit/client/gameSync.test.js:
   - Delta merge dogrulugu
   - Army create + preview matching
@@ -577,14 +577,14 @@
   - Preview timeout cleanup
 - [ ] Kabul: 10+ assertion PASS
 
-### P6.12 — Integration: full client-server bot match
+### P6.12 [DONE] — Integration: full client-server bot match
 - [ ] tests/integration/fullBotMatch.test.js:
   - Server + socket + bot match
   - Spawn phase → playing → game_over
   - State updates received
 - [ ] Kabul: Full E2E flow PASS
 
-### P6.13 — PERF + Screenshot: bot match render
+### P6.13 [DONE] — PERF + Screenshot: bot match render
 - [ ] Puppeteer: bot match in progress screenshot
 - [ ] Perf: 60fps desktop, 30fps mobile hedef
 - [ ] PERF-LOG.md'ye kaydet
@@ -595,7 +595,7 @@
 ## PHASE 7: Game HUD
 > React overlay: header, stats, spawn, tooltips, settings, toast.
 
-### P7.01 — GameBridge.js (Phaser <-> React event bus)
+### P7.01 [DONE] — GameBridge.js (Phaser <-> React event bus)
 - [ ] client/src/game-ui/GameBridge.js:
   - Event emitter: emit(event, data), on(event, callback), off(event, callback)
   - Sticky events: cache last value per event name, new subscribers get immediately
@@ -607,7 +607,7 @@
     - hud:ability, hud:quit, hud:settings, hud:spawn
 - [ ] Kabul: Phaser event → React update, sticky calisir
 
-### P7.02 — GameHUD.jsx (ana HUD overlay)
+### P7.02 [DONE] — GameHUD.jsx (ana HUD overlay)
 - [ ] client/src/game-ui/GameHUD.jsx:
   - Container: position absolute, inset 0, z-index 10, pointer-events none
   - Interactive children: pointer-events auto
@@ -627,7 +627,7 @@
   - Border: rgba(200,168,78,0.12)
 - [ ] Kabul: Header, player list, stats guncellenir
 
-### P7.03 — SpawnOverlay.jsx (spawn secim UI)
+### P7.03 [DONE] — SpawnOverlay.jsx (spawn secim UI)
 - [ ] client/src/game-ui/SpawnOverlay.jsx:
   - Full screen overlay during spawn_selection phase
   - Countdown timer: 15s → 0s (gold, Cinzel, large)
@@ -636,14 +636,14 @@
   - Auto-assign warning at 5s
 - [ ] Kabul: 15s countdown, region secimi gorunur
 
-### P7.04 — PreviewCountdown.jsx (oyun baslama geri sayimi)
+### P7.04 [DONE] — PreviewCountdown.jsx (oyun baslama geri sayimi)
 - [ ] client/src/game-ui/PreviewCountdown.jsx:
   - 3s countdown overlay (3... 2... 1...)
   - Large centered text, gold, fade animation
   - Disappears when playing phase starts
 - [ ] Kabul: 3s geri sayim gorunur
 
-### P7.05 — RegionTooltip.jsx (bolge bilgi tooltip)
+### P7.05 [DONE] — RegionTooltip.jsx (bolge bilgi tooltip)
 - [ ] client/src/game-ui/RegionTooltip.jsx:
   - Mouse hover / touch hold on region
   - Shows: region type, HP, building, resource type/rate, defense bonus
@@ -651,7 +651,7 @@
   - Dark panel bg, gold border, compact layout
 - [ ] Kabul: Hover/hold ile tooltip gorunur
 
-### P7.06 — SettingsPanel.jsx (oyun ici ayarlar)
+### P7.06 [DONE] — SettingsPanel.jsx (oyun ici ayarlar)
 - [ ] client/src/game-ui/SettingsPanel.jsx:
   - Toggle switches: glow effects, particles, show FPS, show ping
   - Volume slider (sound + music)
@@ -662,7 +662,7 @@
   - Persist: localStorage battletab_settings
 - [ ] Kabul: Toggleler calisir, localStorage persist
 
-### P7.07 — ToastSystem.jsx (bildirim toast)
+### P7.07 [DONE] — ToastSystem.jsx (bildirim toast)
 - [ ] client/src/game-ui/ToastSystem.jsx:
   - Bottom-center positioned
   - Auto-dismiss after 3s
@@ -672,7 +672,7 @@
   - Slide-up animation on appear, fade on dismiss
 - [ ] Kabul: Toast gorunur, auto-dismiss, queue calisir
 
-### P7.08 — QuitDialog.jsx + EliminatedDialog.jsx
+### P7.08 [DONE] — QuitDialog.jsx + EliminatedDialog.jsx
 - [ ] QuitDialog.jsx:
   - "Are you sure you want to quit?"
   - "You will lose this match." warning
@@ -684,7 +684,7 @@
   - "Spectate" + "Back to Menu" buttons
 - [ ] Kabul: Dialoglar dogru zamanda gorunur
 
-### P7.09 — game-hud.css responsive
+### P7.09 [DONE] — game-hud.css responsive
 - [ ] client/src/game-ui/game-hud.css:
   - Mobile (<768px): hamburger menu toggle, stacked layout, safe area insets
   - Tablet (768-1024px): compact sidebar
@@ -695,7 +695,7 @@
   - Transitions: 0.2s ease on all interactive
 - [ ] Kabul: Mobile + tablet + desktop uyumlu
 
-### P7.10 — Unit: GameBridge
+### P7.10 [DONE] — Unit: GameBridge
 - [ ] tests/unit/client/gameBridge.test.js:
   - Event emit + receive
   - Sticky event caching
@@ -703,7 +703,7 @@
   - Cleanup (off)
 - [ ] Kabul: 8+ assertion PASS
 
-### P7.11 — HUD screenshot + perf
+### P7.11 [DONE] — HUD screenshot + perf
 - [ ] Puppeteer: HUD panels, mobile view, spawn overlay
 - [ ] Perf: HUD render < 16ms (60fps)
 - [ ] Kabul: Screenshots kayitli

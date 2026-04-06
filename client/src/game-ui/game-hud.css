@@ -1,0 +1,121 @@
+/* BattleTab v2 — Game HUD Styles */
+
+.game-hud {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  font-family: 'Inter', sans-serif;
+  color: #d0d0e0;
+}
+
+.game-hud > * {
+  pointer-events: auto;
+}
+
+/* Header */
+.hud-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: rgba(6, 6, 14, 0.85);
+  border-bottom: 1px solid rgba(200, 168, 78, 0.12);
+}
+
+.hud-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #c8a84e;
+}
+
+.hud-mode {
+  font-size: 0.75rem;
+  color: rgba(200, 200, 220, 0.5);
+  text-transform: capitalize;
+}
+
+.hud-timer {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d0d0e0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Player List */
+.hud-players {
+  position: absolute;
+  top: 50px;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(6, 6, 14, 0.82);
+  border: 1px solid rgba(200, 168, 78, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  min-width: 140px;
+}
+
+.hud-player {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.hud-player.eliminated {
+  opacity: 0.4;
+  text-decoration: line-through;
+}
+
+.hud-player-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.hud-player-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hud-player-regions {
+  color: rgba(200, 200, 220, 0.5);
+  font-size: 0.7rem;
+}
+
+/* Countdown Overlay */
+.hud-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hud-countdown {
+  font-family: 'Cinzel', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #c8a84e;
+  text-shadow: 0 0 40px rgba(200, 168, 78, 0.5);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hud-header { padding: 6px 10px; }
+  .hud-logo { font-size: 0.85rem; }
+  .hud-players {
+    min-width: 100px;
+    padding: 6px;
+  }
+  .hud-player { font-size: 0.65rem; }
+  .hud-countdown { font-size: 3rem; }
+}
