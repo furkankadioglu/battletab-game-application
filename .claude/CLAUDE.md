@@ -12,7 +12,9 @@ Multiplayer bir savaş oyunu uygulaması.
 ## Proje Yapısı
 ```
 battletab-game-application/
-├── CLAUDE.md                  # Claude Code proje talimatları
+├── .claude/                   # Claude Code proje konfigürasyonu
+│   ├── CLAUDE.md              # Proje talimatları
+│   └── settings.json          # Proje ayarları
 ├── README.md                  # Proje açıklaması
 └── claude_documentations/     # Geliştirme dokümantasyonları
 ```
