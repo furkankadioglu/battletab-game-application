@@ -24,3 +24,10 @@
 - server/src/ dizin yapisi: 14 alt klasor + game/entities, game/maps
 - server/db/migrations/ dizini
 - npm install: 143 paket, 0 vulnerability
+
+### P0.04 — Client package.json + Vite config
+- client/package.json: react 19, phaser 3.70, vite 5, capacitor 6, socket.io-client
+- client/vite.config.js: react plugin, port 5173, socket.io proxy
+- client/index.html: 4 container (bg-canvas, auth-root, menu-root, game), fonts, viewport
+- client/src/: 13 alt dizin + index.js entry point
+- vite build: 44ms, vite dev: OK

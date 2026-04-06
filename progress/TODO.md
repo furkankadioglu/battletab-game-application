@@ -43,12 +43,12 @@
 - [x] server/src/ dizin yapisi: admin/, analytics/, auth/, config/, daily/, email/, friends/, game/, matchmaking/, ranking/, routes/, socket/, store/, utils/
 - [x] Kabul: cd server && npm install hatasiz
 
-### P0.04 — Client package.json + Vite config (doc 07)
-- [ ] client/package.json: dependencies (capacitor, react 19, phaser 3.70, vite 5, socket.io-client)
-- [ ] client/vite.config.js: React plugin, port 5173, proxy /socket.io → localhost:3000
-- [ ] client/index.html: 4 container (bg-canvas, auth-root, menu-root, game), fonts, viewport
-- [ ] client/src/ dizin yapisi
-- [ ] Kabul: cd client && npm run dev calisir
+### P0.04 — Client package.json + Vite config (doc 07) [DONE]
+- [x] client/package.json: dependencies (capacitor, react 19, phaser 3.70, vite 5, socket.io-client)
+- [x] client/vite.config.js: React plugin, port 5173, proxy /socket.io → localhost:3000
+- [x] client/index.html: 4 container (bg-canvas, auth-root, menu-root, game), fonts, viewport
+- [x] client/src/ dizin yapisi
+- [x] Kabul: cd client && npm run dev calisir
 
 ### P0.05 — Puppeteer + benchmark + smoke + deploy scriptleri
 - [ ] tests/visual/screenshot.test.js (mevcut, genislet)

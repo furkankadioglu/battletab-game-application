@@ -20,3 +20,9 @@
 - 2 devDeps: jest, nodemon
 - .env.example: PORT, DATABASE_URL, REDIS_URL, JWT_SECRET, CORS_ORIGIN
 - 14+ server/src/ alt dizin yapisi olusturuldu
+
+### P0.04 — Client package.json + Vite config
+- React 19 + Phaser 3.70 + Vite 5 + Capacitor 6
+- vite.config.js: proxy, sourcemap
+- index.html: 4 container, Cinzel/Inter fonts, mobile viewport
+- 13 src alt dizin, client/public/maps/

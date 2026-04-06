@@ -2,11 +2,28 @@
   "name": "battletab-client",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "echo 'Client dev server not yet configured'",
-    "build": "echo 'Client build not yet configured'",
-    "preview": "echo 'Client preview not yet configured'"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "@capacitor/core": "^6.1.0",
+    "@capacitor/haptics": "^6.0.0",
+    "@capacitor/keyboard": "^6.0.0",
+    "@capacitor/screen-orientation": "^6.0.0",
+    "@capacitor/splash-screen": "^6.0.0",
+    "@capacitor/status-bar": "^6.0.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "chart.js": "^4.5.1",
+    "phaser": "^3.70.0",
+    "react": "^19.1.0",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "^19.1.0",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
 }
