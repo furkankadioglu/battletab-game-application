@@ -1,29 +1,32 @@
 /**
  * BattleTab v2 — Client Entry Point
- * Bootstraps auth → menu → game lifecycle.
+ * Bootstraps auth -> menu -> game lifecycle.
  */
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import AuthApp from './auth/AuthApp.jsx';
+import MenuApp from './menu/MenuApp.jsx';
 import { initBattleCanvas } from './auth/BattleCanvas.js';
-import { getToken, getProfile } from './auth/authService.js';
+import { getToken, getProfile, clearToken } from './auth/authService.js';
 
 let battleCanvas = null;
+let menuRoot = null;
 
 function showAuth() {
-  const authRoot = document.getElementById('auth-root');
-  authRoot.style.display = 'block';
+  const authEl = document.getElementById('auth-root');
+  authEl.style.display = 'block';
+  document.getElementById('menu-root').style.display = 'none';
 
-  // Animated background
   battleCanvas = initBattleCanvas('bg-canvas');
 
-  const root = createRoot(authRoot);
+  const root = createRoot(authEl);
   root.render(
     React.createElement(AuthApp, {
       onLogin: (user) => {
         if (battleCanvas) battleCanvas.destroy();
-        authRoot.style.display = 'none';
+        authEl.style.display = 'none';
+        root.unmount();
         showMenu(user);
       },
     })
@@ -31,15 +34,27 @@ function showAuth() {
 }
 
 function showMenu(user) {
-  const menuRoot = document.getElementById('menu-root');
-  menuRoot.style.display = 'block';
-  menuRoot.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100dvh;color:#d0d0e0;font-family:Inter,sans-serif;">
-    <div style="text-align:center;">
-      <h1 style="font-family:Cinzel,serif;color:#c8a84e;margin-bottom:16px;">BattleTab</h1>
-      <p>Welcome, ${user.username}!</p>
-      <p style="opacity:0.5;margin-top:8px;">Menu coming in Phase 3</p>
-    </div>
-  </div>`;
+  const menuEl = document.getElementById('menu-root');
+  menuEl.style.display = 'block';
+
+  if (menuRoot) menuRoot.unmount();
+  menuRoot = createRoot(menuEl);
+  menuRoot.render(
+    React.createElement(MenuApp, {
+      user,
+      onStartGame: (opts) => {
+        console.log('Starting game:', opts);
+        // Game start will be implemented in Phase 5-6
+      },
+      onLogout: () => {
+        clearToken();
+        menuEl.style.display = 'none';
+        menuRoot.unmount();
+        menuRoot = null;
+        showAuth();
+      },
+    })
+  );
 }
 
 async function init() {
@@ -50,7 +65,7 @@ async function init() {
       showMenu(data.user);
       return;
     } catch {
-      // Token expired or invalid
+      clearToken();
     }
   }
   showAuth();

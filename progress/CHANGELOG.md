@@ -58,3 +58,11 @@
 - 19 AuthService unit tests PASS
 - Client: AuthApp.jsx (5 modes), auth.css (glassmorphism), BattleCanvas.js
 - Client build: 536ms, 200KB JS
+
+### PHASE 3 — Menu System (P3.01-P3.07)
+- MenuApp.jsx: 6-tab navigation with gold accent tab bar
+- PlayTab.jsx: map selection (3 maps) + mode selection (bot/pvp/ranked)
+- menu.css: dark theme, responsive grid, glassmorphism cards
+- maps.js: Turkey (91), Poland (73), China (34) config
+- i18n: en.js + tr.js (120+ keys), t() function, useTranslation() hook
+- 73 unit tests PASS (11 new: i18n + maps)

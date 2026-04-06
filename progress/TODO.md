@@ -125,13 +125,14 @@
 
 ## PHASE 3: Menu System
 
-### P3.01 — MenuApp.jsx (6 tab: Play, Store, Friends, Profile, Ranked, Settings)
-### P3.02 — menu.css (dark theme, gold accents)
-### P3.03 — maps.js config (Turkey 91, Poland 73, China 34)
-### P3.04 — Play tab (map select, mode select, rewards)
-### P3.05 — i18n (en.js, tr.js — 180+ key)
-### P3.06 — Unit: i18n, map config
-### P3.07 — Menu screenshot + perf
+### P3.01 [DONE] — MenuApp.jsx (6 tab: Play, Store, Friends, Profile, Ranked, Settings)
+### P3.02 [DONE] — menu.css (dark theme, gold accents)
+### P3.03 [DONE] — maps.js config (Turkey 91, Poland 73, China 34)
+### P3.04 [DONE] — Play tab (map select, mode select, rewards)
+### P3.05 [DONE] — i18n (en.js, tr.js — 180+ key)
+### P3.06 [DONE]
+- [x] 11 i18n tests + maps tests PASS — Unit: i18n, map config
+### P3.07 [DEFERRED] — Menu screenshot + perf
 
 ---
 

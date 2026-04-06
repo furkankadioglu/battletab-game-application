@@ -103,3 +103,26 @@
 - BattleCanvas.js: floating gold particles animated background
 - authService.js: client API wrapper + token management
 - index.js: auth → menu lifecycle
+
+## PHASE 3: Menu System
+
+### P3.01-P3.02 — MenuApp + CSS
+- MenuApp.jsx: 6-tab navigation (Play, Store, Friends, Profile, Ranked, Settings)
+- menu.css: dark theme, gold tab bar, responsive grid
+
+### P3.03 — maps.js config
+- 3 maps: Turkey (91), Poland (73), China (34)
+- getMapById, getAllMaps exports
+
+### P3.04 — PlayTab
+- Map selection cards, mode selection (Bot/PvP/Ranked), Play button
+- Diamond reward/cost display per mode
+
+### P3.05 — i18n (en.js + tr.js)
+- 120+ translation keys per language
+- i18n.js: t(), setLanguage(), useTranslation() hook
+- Template variables: {{name}}, {{count}}, etc.
+
+### P3.06 — Unit tests: 11 new (73 total)
+- i18n: key count, consistency, templates, critical keys
+- maps: 3 maps, region counts, required fields
