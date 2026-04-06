@@ -778,7 +778,7 @@
 ## PHASE 9: Social & Economy
 > Arkadaslik, profil, magaza, gunluk odul, leaderboard UI.
 
-### P9.01 — FriendService.js + routes + UI
+### P9.01 [DONE] — FriendService.js + routes + UI
 - [ ] server/src/friends/FriendService.js:
   - In-memory: friends Map<userId, Set<friendId>>, pendingRequests Map<userId, [{from, createdAt}]>
   - sendRequest(fromUserId, playerCode): find by code, add to pending
@@ -802,7 +802,7 @@
   - Remove friend: confirm dialog
 - [ ] Kabul: Add → accept → listede gorun
 
-### P9.02 — ProfileTab.jsx
+### P9.02 [DONE] — ProfileTab.jsx
 - [ ] client/src/menu/ProfileTab.jsx:
   - Username, player code (copyable), league badge
   - Stats cards: games played/won/lost per mode (bot, normal, ranked)
@@ -813,7 +813,7 @@
   - Edit profile option (username change)
 - [ ] Kabul: Profil bilgileri dogru
 
-### P9.03 — StoreService + SkinCatalog + StoreTab
+### P9.03 [DONE] — StoreService + SkinCatalog + StoreTab
 - [ ] server/src/store/SkinCatalog.js — static catalog:
   - Skins: black(1000,epic), white(1000,epic)
   - Army shapes: circle(150,common), diamond(200,common), star(300,rare), shield(750,epic), hex(1000,epic)
@@ -846,7 +846,7 @@
   - Diamond balance display
 - [ ] Kabul: Catalog gorunur, satin alma, equip calisir
 
-### P9.04 — DailyRewardService + UI
+### P9.04 [DONE] — DailyRewardService + UI
 - [ ] server/src/daily/DailyRewardService.js:
   - Reset time: 06:00 UTC (09:00 Turkey)
   - Max streak: 30 days
@@ -871,7 +871,7 @@
   - Auto-show on login if claimable
 - [ ] Kabul: Streak artar, diamond eklenir, popup gorunur
 
-### P9.05 — RankedTab + LeaderboardTab
+### P9.05 [DONE] — RankedTab + LeaderboardTab
 - [ ] client/src/menu/RankedTab.jsx:
   - Current ELO rating display (large number)
   - League badge with name + color
@@ -886,7 +886,7 @@
   - Pull-to-refresh
 - [ ] Kabul: Leaderboard dogru siralama, ranked giris calisir
 
-### P9.06 — Email service (OneSignal / SMTP fallback)
+### P9.06 [DONE] — Email service (OneSignal / SMTP fallback)
 - [ ] server/src/email/EmailService.js:
   - sendVerificationEmail(email, code): OneSignal API call
   - sendResetEmail(email, code): OneSignal API call
@@ -895,14 +895,14 @@
 - [ ] AuthService entegrasyonu: register → sendVerificationEmail, forgotPassword → sendResetEmail
 - [ ] Kabul: Email gonderimi (veya fallback log)
 
-### P9.07 — Unit + Integration: Store, Daily, Friends
+### P9.07 [DONE] — Unit + Integration: Store, Daily, Friends
 - [ ] tests/unit/server/store.test.js: purchase, equip, insufficient diamonds, catalog
 - [ ] tests/unit/server/dailyReward.test.js: claim, streak, reset, guest block
 - [ ] tests/unit/server/friends.test.js: request, accept, reject, remove, auto-accept
 - [ ] tests/integration/socialFlow.test.js: register → add friend → daily claim → buy skin
 - [ ] Kabul: 20+ assertion PASS
 
-### P9.08 — Store + profile screenshot + perf
+### P9.08 [DONE] — Store + profile screenshot + perf
 - [ ] Puppeteer: store, profile, leaderboard, daily reward
 - [ ] Perf: page loads < 500ms
 - [ ] Kabul: Screenshots kayitli

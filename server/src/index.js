@@ -13,9 +13,21 @@ const redis = require('./config/redis');
 const { createSocketServer } = require('./socket');
 const AuthService = require('./auth/AuthService');
 const { createAuthRoutes } = require('./routes/auth');
+const RankingService = require('./ranking/RankingService');
+const { createRankingRoutes } = require('./routes/ranking');
+const FriendService = require('./friends/FriendService');
+const { createFriendsRoutes } = require('./routes/friends');
+const StoreService = require('./store/StoreService');
+const { createStoreRoutes } = require('./routes/store');
+const DailyRewardService = require('./daily/DailyRewardService');
+const { createDailyRewardRoutes } = require('./routes/dailyReward');
 
 // ─── Services ─────────────────────────────────────────────
 const authService = new AuthService();
+const rankingService = new RankingService();
+const storeService = new StoreService();
+const dailyRewardService = new DailyRewardService(storeService);
+const friendService = new FriendService(authService);
 
 // ─── Express App ──────────────────────────────────────────
 const app = express();
@@ -52,8 +64,14 @@ app.get('/api/health/detailed', (req, res) => {
 });
 
 // Auth routes
-const { router: authRouter } = createAuthRoutes(authService);
+const { router: authRouter, authenticate } = createAuthRoutes(authService);
 app.use('/api/auth', authRouter);
+
+// API routes
+app.use('/api/ranking', createRankingRoutes(rankingService));
+app.use('/api/friends', createFriendsRoutes(friendService, authenticate));
+app.use('/api/store', createStoreRoutes(storeService, authenticate));
+app.use('/api/daily-reward', createDailyRewardRoutes(dailyRewardService, authenticate));
 
 // 404 handler
 app.use((req, res) => {
