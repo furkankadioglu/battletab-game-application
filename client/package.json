@@ -1,0 +1,12 @@
+{
+  "name": "battletab-client",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Client dev server not yet configured'",
+    "build": "echo 'Client build not yet configured'",
+    "preview": "echo 'Client preview not yet configured'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

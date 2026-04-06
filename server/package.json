@@ -1,0 +1,13 @@
+{
+  "name": "battletab-server",
+  "version": "2.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --forceExit --detectOpenHandles"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

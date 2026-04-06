@@ -1,4 +1,53 @@
 {
-  "permissions": {},
-  "hooks": {}
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "effortLevel": "high",
+  "alwaysThinkingEnabled": true,
+  "env": {
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "1024000",
+    "CLAUDE_CODE_EFFORT_LEVEL": "high",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_MAX_TOOL_USE_PER_TURN": "5000"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx jest *)",
+      "Bash(npx jest)",
+      "Bash(node *)",
+      "Bash(cat *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(chmod *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(sort *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git log *)",
+      "Bash(cd *)",
+      "Bash(pwd)",
+      "Bash(echo *)",
+      "Bash(curl -sf http://localhost:*)",
+      "Bash(timeout *)",
+      "Bash(kill *)",
+      "Bash(bash hooks/*)",
+      "Bash(bash tests/*)",
+      "Bash(bash scripts/*)",
+      "Read(*)",
+      "Edit(*)",
+      "MultiEdit(*)",
+      "Write(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)"
+    ]
+  }
 }
