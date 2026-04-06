@@ -1136,3 +1136,66 @@
 - [ ] Known issues / tech debt listesi
 - [ ] Architecture diagram (ASCII or mermaid)
 - [ ] Kabul: Rapor hazir, proje release-ready
+
+---
+
+## PHASE 12: Wire-Up & Integration
+> Tum parcalari birlestir: client Play → socket → server → game → render.
+
+### P12.01 [DONE] — Client Play butonu → Socket.IO baglantisi
+- [ ] client/src/index.js: onStartGame → SocketManager.connect → emit JOIN_LOBBY
+- [ ] Lobby event handling: QUEUE_UPDATE, MATCH_FOUND → GameScene basla
+- [ ] Phaser lazy init: sadece oyun basladiginda Phaser create et
+- [ ] Auth token socket'e gonder
+
+### P12.02 [DONE] — GameScene gercek veri ile render
+- [ ] GameScene: game_start event → region polygonlari ciz (fill + stroke)
+- [ ] Spawn phase: region tiklama → SELECT_SPAWN emit
+- [ ] spawn_selected → region highlight guncelle
+- [ ] regions_reveal → gercek region tiplerini goster
+
+### P12.03 [DONE] — Army gonderme (drag-to-send)
+- [ ] SelectionSystem: pointer down → drag → release → SEND_SOLDIERS emit
+- [ ] Preview army olustur (local)
+- [ ] army_created event → gercek army sprite ekle
+- [ ] army_destroyed → sprite kaldir
+
+### P12.04 [DONE] — Client-side prediction (army hareket)
+- [ ] ArmyRenderer: her frame position += direction * speed * dt
+- [ ] Waypoint takibi: waypointIndex ilerlet
+- [ ] Gate teleport: snap position 300ms
+
+### P12.05 [DONE] — Ability bar + keyboard input
+- [ ] AbilityBar: 5 slot, charge goster, cooldown overlay
+- [ ] Keyboard: 1-5 tuslari → ability targeting mode
+- [ ] Click target → emit USE_MISSILE/NUCLEAR/BARRACKS
+- [ ] Self-cast: USE_SPEED_BOOST/USE_FREEZE → aninda emit
+
+### P12.06 [DONE] — HUD canli veri baglantisi
+- [ ] GameHUD: state_update → region HP, player stats guncelle
+- [ ] Timer: oyun suresi
+- [ ] Player list: regionCount, eliminated status
+- [ ] Resource display: iron/crystal/uranium
+
+### P12.07 [DONE] — Game over akisi
+- [ ] game_over event → GameOverScene'e gecis
+- [ ] Stats, diamond reward, ELO goster
+- [ ] Play Again → yeni lobby
+- [ ] Back to Menu → menu goster
+
+### P12.08 — Bot match E2E test
+- [ ] Server basla → client baglan → bot match → spawn → play → game_over
+- [ ] Headless Puppeteer ile test
+- [ ] Kabul: Bot match bastan sona calisir
+
+### P12.09 — Menu tab'lari canli veri
+- [ ] StoreTab: /api/store/catalog fetch, purchase, equip
+- [ ] FriendsTab: /api/friends fetch, add, accept
+- [ ] ProfileTab: /api/auth/profile fetch
+- [ ] RankedTab: /api/ranking/leaderboard fetch
+- [ ] DailyRewardPopup: /api/daily-reward/status, claim
+
+### P12.10 — Full deploy + production smoke
+- [ ] Deploy all
+- [ ] curl health, auth register/login, bot match socket test
+- [ ] Kabul: Production tam calisir
