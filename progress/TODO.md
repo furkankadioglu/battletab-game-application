@@ -167,7 +167,7 @@
 ## PHASE 5: Room & Matchmaking
 > GameRoom lifecycle, socket handlers, matchmaking, bot AI, MapGenerator.
 
-### P5.01 — MapGenerator.js (GeoJSON → game regions)
+### P5.01 [DONE] — MapGenerator.js (GeoJSON → game regions)
 - [ ] server/src/game/MapGenerator.js:
   - generateMap(mapId): GeoJSON dosyasini oku, parse et
   - Mercator projection: lat/lon → pixel (1600x900, 50px padding)
@@ -194,7 +194,7 @@
 - [ ] Grid map fallback: 5x4 (<=2 player), 6x5 (>2), jitter +/-20%, 8-neighbor diagonal
 - [ ] Kabul: generateMap('turkey') → ~91 region, dogru neighbor, gate, terrain dagilimi
 
-### P5.02 — PathfindingSystem.js (rocky etrafinda waypoint)
+### P5.02 [DONE] — PathfindingSystem.js (rocky etrafinda waypoint)
 - [ ] server/src/game/PathfindingSystem.js guncelle:
   - findPath(startPos, endPos, gameState): waypoint dizisi don
   - Quick check: direct path clear → empty waypoints
@@ -206,7 +206,7 @@
   - Segment-polygon intersection testi
 - [ ] Kabul: Rocky etrafinda dolasan path, gate shortcut bulur
 
-### P5.03 — GameRoom.js (oyun odasi lifecycle)
+### P5.03 [DONE] — GameRoom.js (oyun odasi lifecycle)
 - [ ] server/src/game/GameRoom.js:
   - Constructor: GameRoom(id, mode, io, mapType)
   - maxPlayers: bot=2, 4player=4, else=2
@@ -256,7 +256,7 @@
   - Disconnect handling: mark eliminated, regions→neutral, cleanup
 - [ ] Kabul: Room create → join → spawn → play → game_over tam flow
 
-### P5.04 — Socket handlers (gameHandler + lobbyHandler)
+### P5.04 [DONE] — Socket handlers (gameHandler + lobbyHandler)
 - [ ] server/src/socket/handlers/gameHandler.js:
   - SELECT_SPAWN: { regionId } → room.onSelectSpawn
   - SEND_SOLDIERS: { sourceIds[], targetId } → room.onSendSoldiers
@@ -278,7 +278,7 @@
 - [ ] server/src/socket/index.js'e handler registration ekle
 - [ ] Kabul: Tum socket eventler validate + process edilir
 
-### P5.05 — MatchmakingService + BotMatchService
+### P5.05 [DONE] — MatchmakingService + BotMatchService
 - [ ] server/src/matchmaking/MatchmakingService.js:
   - Queue per mode: Map<socketId, { socket, username, mapType, userId, rating, joinedAt }>
   - addToQueue(socket, mode, username, mapType, userId, rating)
@@ -301,7 +301,7 @@
 - [ ] server/src/index.js'e matchmaking entegrasyonu
 - [ ] Kabul: Normal queue bekler, ranked ELO range genisler, bot instant
 
-### P5.06 — BotAI.js (yapay zeka karar sistemi)
+### P5.06 [DONE] — BotAI.js (yapay zeka karar sistemi)
 - [ ] server/src/game/BotAI.js:
   - Constructor: BotAI(playerId, gameState)
   - Decision interval: 500-1000ms (BOT_DECISION_INTERVAL)
