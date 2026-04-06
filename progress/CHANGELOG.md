@@ -50,3 +50,11 @@
 - Health: /api/health + /api/health/detailed
 - 43 unit tests + 3 integration tests PASS
 - Perf: 3.8ms startup (target < 2000ms)
+
+### PHASE 2 — Auth System (P2.01-P2.10)
+- DB migrations: 4 SQL files (users, matches, daily_rewards, analytics)
+- AuthService: register, login, guest, JWT, email verify, password reset
+- Auth routes: 8 REST endpoints at /api/auth/*
+- 19 AuthService unit tests PASS
+- Client: AuthApp.jsx (5 modes), auth.css (glassmorphism), BattleCanvas.js
+- Client build: 536ms, 200KB JS

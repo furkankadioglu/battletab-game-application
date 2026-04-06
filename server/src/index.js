@@ -11,6 +11,11 @@ const config = require('./config');
 const database = require('./config/database');
 const redis = require('./config/redis');
 const { createSocketServer } = require('./socket');
+const AuthService = require('./auth/AuthService');
+const { createAuthRoutes } = require('./routes/auth');
+
+// ─── Services ─────────────────────────────────────────────
+const authService = new AuthService();
 
 // ─── Express App ──────────────────────────────────────────
 const app = express();
@@ -46,6 +51,10 @@ app.get('/api/health/detailed', (req, res) => {
   });
 });
 
+// Auth routes
+const { router: authRouter } = createAuthRoutes(authService);
+app.use('/api/auth', authRouter);
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({ error: 'Not found' });
@@ -67,6 +76,13 @@ async function start() {
     database.connect(),
     redis.connect(),
   ]);
+
+  // Initialize services with DB pool
+  const pool = database.getPool();
+  if (pool) {
+    authService.setDbPool(pool);
+    await authService.loadFromDB();
+  }
 
   server.listen(config.PORT, () => {
     console.log(`BattleTab server running on port ${config.PORT} (${config.NODE_ENV})`);
@@ -106,4 +122,4 @@ process.on('uncaughtException', (err) => {
 });
 
 // ─── Exports (for testing) ────────────────────────────────
-module.exports = { app, server, io };
+module.exports = { app, server, io, authService };

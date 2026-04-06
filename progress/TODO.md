@@ -110,16 +110,16 @@
 
 ## PHASE 2: Auth System
 
-### P2.01 — DB migration: users
-### P2.02 — AuthService (register, login, guest, JWT, verify, reset)
-### P2.03 — Auth routes (8 endpoint)
-### P2.04 — Unit: AuthService (15+ assertion)
-### P2.05 — Integration: register→login→token
-### P2.06 — Client: index.html (4 container, fonts, viewport)
-### P2.07 — Client: AuthApp.jsx (login, register, verify, reset)
-### P2.08 — Client: BattleCanvas.js (animated background)
-### P2.09 — Client: auth.css (dark luxury theme)
-### P2.10 — Auth screenshot + perf
+### P2.01 — DB migration: users [DONE]
+### P2.02 — AuthService (register, login, guest, JWT, verify, reset) [DONE]
+### P2.03 — Auth routes (8 endpoint) [DONE]
+### P2.04 — Unit: AuthService (19 tests) [DONE]
+### P2.05 — Integration: register [included in P1.09] [DONE]→login→token
+### P2.06 — Client: index.html [completed in P0.04] [DONE]
+### P2.07 — Client: AuthApp.jsx (login, register, verify, reset) [DONE]
+### P2.08 — Client: BattleCanvas.js (animated background) [DONE]
+### P2.09 — Client: auth.css (dark luxury theme) [DONE]
+### P2.10 — Auth screenshot + perf [DEFERRED — no visual server yet]
 
 ---
 

@@ -80,3 +80,26 @@
 - Server boot, health 200, detailed health, 404
 
 ### P1.10 — PERF: 3.8ms (target < 2000ms)
+
+## PHASE 2: Auth System
+
+### P2.01 — DB migrations
+- 4 SQL migration dosyasi: users+skins, matches, daily_rewards, analytics
+- Migration runner: server/db/migrate.js
+
+### P2.02 — AuthService
+- register, login, guest, JWT, verifyEmail, forgotPassword, resetPassword
+- In-memory + DB persist, bcrypt 10 rounds, 6-digit codes
+
+### P2.03 — Auth routes (8 endpoint)
+- /api/auth: register, login, guest, profile, verify-email, resend, forgot, reset
+
+### P2.04 — Unit tests: 19 assertions for AuthService
+- register (7 tests), login (5), guest (1), JWT (2), verify (2), reset (1), playerCode (1)
+
+### P2.06-P2.09 — Client Auth UI
+- AuthApp.jsx: login/register/verify/forgot/reset forms with state management
+- auth.css: dark luxury glassmorphism (gold #c8a84e, backdrop-blur)
+- BattleCanvas.js: floating gold particles animated background
+- authService.js: client API wrapper + token management
+- index.js: auth → menu lifecycle
