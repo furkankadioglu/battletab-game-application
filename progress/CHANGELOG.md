@@ -35,3 +35,7 @@
 ### P0.06 — Ilk unit test: gameConstants dogrulama
 - 26 test / 4 describe: gameConstants, eventTypes, regionTypes, version
 - Tum sabitler, tipler, degerler, formatlar dogrulandi
+
+### P0.07 — smoke.sh gecmeli
+- PHASE 0 tamamlandi: 7/7 gorev DONE
+- smoke.sh: shared + 26 unit test + integration + client build = 4/4 PASS

@@ -46,3 +46,7 @@
 - regionTypes: 2 test (count, names)
 - version: 2 test (format, codename)
 - 26/26 PASS, 0.232s
+
+### P0.07 — smoke.sh gecmeli
+- 4/4 check PASS: shared, unit (26 test), integration (0, passWithNoTests), client build
+- Exit code 0

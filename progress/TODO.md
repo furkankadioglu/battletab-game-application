@@ -61,9 +61,9 @@
 - [x] npx jest --testPathPattern=unit PASS (0.232s)
 - [x] Kabul: 26 assertion yesil
 
-### P0.07 — smoke.sh gecmeli
-- [ ] smoke.sh calistir, tum adimlar gecmeli
-- [ ] Kabul: exit code 0
+### P0.07 — smoke.sh gecmeli [DONE]
+- [x] smoke.sh calistir: 4/4 PASS
+- [x] Kabul: exit code 0
 
 ---
 
