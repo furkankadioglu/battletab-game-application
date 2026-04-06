@@ -912,7 +912,7 @@
 ## PHASE 10: Polish & Mobile
 > Ses, mobil, tutorial, diller, building, admin, Capacitor.
 
-### P10.01 — SoundManager + MusicManager
+### P10.01 [DONE] — SoundManager + MusicManager
 - [ ] client/src/audio/SoundManager.js:
   - Web Audio API synthesis (no audio files needed)
   - Sounds: bubble (army send), capture (region capture), teleport (gate), bomb (missile/nuclear)
@@ -927,7 +927,7 @@
   - Persist: localStorage battletab_music_muted
 - [ ] Kabul: Sesler dogru zamanda, mute/volume calisir
 
-### P10.02 — Mobile responsive + touch controls
+### P10.02 [DONE] — Mobile responsive + touch controls
 - [ ] client/src/config/device.js:
   - getDeviceType(width): mobile(<768), tablet(768-1200), desktop(>=1200)
   - isMobile, isTablet, isDesktop, isTouch
@@ -947,7 +947,7 @@
   - Safe area insets: notch padding
 - [ ] Kabul: Mobile'da oynanabilir, touch responsive
 
-### P10.03 — TutorialScene (6 asamali ogretici)
+### P10.03 [DONE] — TutorialScene (6 asamali ogretici)
 - [ ] client/src/scenes/TutorialScene.js:
   - 6 stage sequential tutorial with local bot:
     1. Sending Troops: drag mechanic, "Select your region and drag to target"
@@ -965,7 +965,7 @@
   - Auto-advance on objective completion
 - [ ] Kabul: 6 asama tamamlanabilir, ogretici metinler gorunur
 
-### P10.04 — Remaining i18n (10 more languages)
+### P10.04 [DONE] — Remaining i18n (10 more languages)
 - [ ] client/src/i18n/ — 10 ek dil dosyasi:
   - de.js (German), fr.js (French), es.js (Spanish), it.js (Italian)
   - pt.js (Portuguese), ru.js (Russian), ar.js (Arabic)
@@ -978,7 +978,7 @@
 - [ ] i18n.js: dynamic import for non-bundled languages
 - [ ] Kabul: 12 dil arasi gecis, RTL calisir
 
-### P10.05 — BuildingSystem + BuildingBar
+### P10.05 [DONE] — BuildingSystem + BuildingBar
 - [ ] server/src/game/BuildingSystem.js:
   - processBuilding(gameState, playerId, regionId, buildingId):
     - Validate: owned, no existing building, not ROCKY
@@ -1003,7 +1003,7 @@
   - Show building count per type (if maxPerPlayer > 0)
 - [ ] Kabul: Bina yapilir, kaynak duser, etki uygulanir
 
-### P10.06 — Ability Systems (Missile, Nuclear, Barracks, SpeedBoost, Freeze)
+### P10.06 [DONE] — Ability Systems (Missile, Nuclear, Barracks, SpeedBoost, Freeze)
 - [ ] server/src/game/BombSystem.js (Missile):
   - Apply: floor(target.hp * 0.5) damage
   - Iron dome check: any iron_dome building within 3 hops → block
@@ -1027,7 +1027,7 @@
 - [ ] GameRoom ability handlers entegrasyonu
 - [ ] Kabul: 5 ability dogru calisir, iron dome block
 
-### P10.07 — AdminService + Admin Panel
+### P10.07 [DONE] — AdminService + Admin Panel
 - [ ] server/src/admin/AdminService.js:
   - Admin auth: check username === 'kan'
   - Game settings: get/post all balance values (override gameConstants at runtime)
@@ -1050,7 +1050,7 @@
   - Analytics dashboard: chart.js grafikler (DAU, games, diamonds)
 - [ ] Kabul: Admin giris, settings degistir, kullanici yonet
 
-### P10.08 — Capacitor mobile builds
+### P10.08 [DONE] — Capacitor mobile builds
 - [ ] mobile/capacitor.config.json:
   - appId: com.battletab.app
   - appName: BattleTab
@@ -1061,13 +1061,13 @@
 - [ ] Live reload: server.url pointed to local dev server
 - [ ] Kabul: iOS ve Android build olusur
 
-### P10.09 — Unit + Integration: Building, Abilities, Tutorial
+### P10.09 [DONE] — Unit + Integration: Building, Abilities, Tutorial
 - [ ] tests/unit/server/buildingSystem.test.js: placement, costs, effects, limits
 - [ ] tests/unit/server/abilities.test.js: missile damage, nuclear disable, barracks upgrade, speed boost, freeze
 - [ ] tests/integration/buildingFlow.test.js: build → effect → verify
 - [ ] Kabul: 15+ assertion PASS
 
-### P10.10 — Mobile + tutorial screenshot + perf
+### P10.10 [DONE] — Mobile + tutorial screenshot + perf
 - [ ] Puppeteer: mobile viewport (375x667), tutorial stages
 - [ ] Perf: mobile 30fps hedef
 - [ ] Kabul: Screenshots kayitli
