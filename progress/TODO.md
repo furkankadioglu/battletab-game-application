@@ -69,39 +69,42 @@
 
 ## PHASE 1: Server Foundation
 
-### P1.01 — Express init (helmet, cors, json)
-- [ ] server/src/index.js: express + http, helmet, cors, json, error handler, graceful shutdown
-- [ ] Kabul: "Server running on port 3000"
+### P1.01 — Express init (helmet, cors, json) [DONE]
+- [x] server/src/index.js: express + http, helmet, cors, json, error handler, graceful shutdown
+- [x] Kabul: "Server running on port 3000"
 
-### P1.02 — Config module
-- [ ] server/src/config/index.js: PORT, NODE_ENV, DB, Redis, JWT, CORS, OneSignal, game settings
-- [ ] Kabul: require('./config') tum degerleri doner
+### P1.02 — Config module [DONE]
+- [x] server/src/config/index.js: PORT, NODE_ENV, DB, Redis, JWT, CORS, OneSignal, game settings
+- [x] Kabul: require('./config') tum degerleri doner
 
-### P1.03 — PostgreSQL + graceful degradation
-- [ ] server/src/config/database.js: pg.Pool (max=10, idle=30s, connect=5s), in-memory fallback
-- [ ] server/db/migrations/: 001_users, 002_user_skins, 003_user_active_skins, 004_matches, 005_daily_rewards, 006_analytics
-- [ ] Kabul: Server DB olmadan da baslar
+### P1.03 — PostgreSQL + graceful degradation [DONE]
+- [x] server/src/config/database.js: pg.Pool (max=10, idle=30s, connect=5s), in-memory fallback
+- [x] server/db/migrations/: 001_users, 002_user_skins, 003_user_active_skins, 004_matches, 005_daily_rewards, 006_analytics
+- [x] Kabul: Server DB olmadan da baslar
 
-### P1.04 — Redis + fallback
-- [ ] server/src/config/redis.js: ioredis lazyConnect, in-memory Map fallback
-- [ ] Kabul: Server Redis olmadan da baslar
+### P1.04 — Redis + fallback [DONE]
+- [x] server/src/config/redis.js: ioredis lazyConnect, in-memory Map fallback
+- [x] Kabul: Server Redis olmadan da baslar
 
-### P1.05 — Socket.IO (WebSocket-only)
-- [ ] server/src/socket/index.js: transports=['websocket'], deflate, 100KB max, ping 25s
-- [ ] Rate limiter: 5 events/sec per socket
-- [ ] Kabul: Socket baglantisi kurulur
+### P1.05 — Socket.IO (WebSocket-only) [DONE]
+- [x] server/src/socket/index.js: transports=['websocket'], deflate, 100KB max, ping 25s
+- [x] Rate limiter: 5 events/sec per socket
+- [x] Kabul: Socket baglantisi kurulur
 
-### P1.06 — ID generator (nanoid)
-- [ ] server/src/utils/idGenerator.js: nanoid(12), prefix, player code (6 char)
-- [ ] Kabul: 1000 ID unique
+### P1.06 — ID generator (nanoid) [DONE]
+- [x] server/src/utils/idGenerator.js: nanoid(12), prefix, player code (6 char)
+- [x] Kabul: 1000 ID unique
 
-### P1.07 — Health check /api
-- [ ] server/src/routes/health.js: GET /api/health, GET /api/health/detailed
-- [ ] Kabul: curl 200 OK
+### P1.07 — Health check /api [DONE]
+- [x] Inline in server/src/index.js: GET /api/health, GET /api/health/detailed
+- [x] Kabul: curl 200 OK
 
-### P1.08 — Unit: config, idGenerator, health
-### P1.09 — Integration: server boot + health
-### P1.10 — PERF: startup suresi < 2s
+### P1.08 — Unit: config, idGenerator, health [DONE]
+- [x] 43 unit tests PASS (config 8, idGenerator 8, health 1, shared 26)
+### P1.09 — Integration: server boot + health [DONE]
+- [x] 3 integration tests PASS (health 200, detailed, 404)
+### P1.10 — PERF: startup suresi < 2s [DONE]
+- [x] Config load: 3.8ms (hedef < 2000ms)
 
 ---
 

@@ -50,3 +50,33 @@
 ### P0.07 — smoke.sh gecmeli
 - 4/4 check PASS: shared, unit (26 test), integration (0, passWithNoTests), client build
 - Exit code 0
+
+## PHASE 1: Server Foundation
+
+### P1.01-P1.02 — Express init + Config module
+- server/src/index.js: Express + HTTP + helmet + cors + json + graceful shutdown
+- server/src/config/index.js: env vars, isProd/isDev, JWT validation
+
+### P1.03 — PostgreSQL + graceful degradation
+- server/src/config/database.js: pg.Pool, in-memory fallback
+
+### P1.04 — Redis + fallback
+- server/src/config/redis.js: ioredis, in-memory Map fallback
+
+### P1.05 — Socket.IO (WebSocket-only)
+- server/src/socket/index.js: transports=['websocket'], deflate, rate limiter 5/s
+
+### P1.06 — ID generator
+- server/src/utils/idGenerator.js: nanoid(12), prefix, 6-char player code
+
+### P1.07 — Health check
+- GET /api/health: status, uptime, version
+- GET /api/health/detailed: + db, redis status
+
+### P1.08 — Unit tests: 43 PASS
+- config: 8 tests, idGenerator: 8 tests, health: 1 test, shared: 26 tests
+
+### P1.09 — Integration: 3 PASS
+- Server boot, health 200, detailed health, 404
+
+### P1.10 — PERF: 3.8ms (target < 2000ms)

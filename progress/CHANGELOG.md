@@ -39,3 +39,14 @@
 ### P0.07 — smoke.sh gecmeli
 - PHASE 0 tamamlandi: 7/7 gorev DONE
 - smoke.sh: shared + 26 unit test + integration + client build = 4/4 PASS
+
+### PHASE 1 — Server Foundation (P1.01-P1.10)
+- Express + HTTP + helmet + cors + json + graceful shutdown (SIGTERM/SIGINT)
+- Config module: env vars with validation
+- PostgreSQL pg.Pool + in-memory fallback
+- Redis ioredis + in-memory Map fallback
+- Socket.IO: WebSocket-only, deflate, rate limiter 5/s, ping/pong
+- ID generator: nanoid + player code
+- Health: /api/health + /api/health/detailed
+- 43 unit tests + 3 integration tests PASS
+- Perf: 3.8ms startup (target < 2000ms)
