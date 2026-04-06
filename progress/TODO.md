@@ -18,10 +18,10 @@
 - [x] shared/package.json, server/package.json, client/package.json
 - [x] npm install basarili, npm test exit 0
 
-### P0.02 — shared/gameConstants.js + eventTypes.js + regionTypes.js + version.js
-- [ ] shared/package.json: name "battletab-shared", private, main: "index.js"
-- [ ] shared/index.js: tum modulleri re-export
-- [ ] shared/gameConstants.js — Tum oyun sabitleri (doc 03 + doc 04):
+### P0.02 — shared/gameConstants.js + eventTypes.js + regionTypes.js + version.js [DONE]
+- [x] shared/package.json: name "battletab-shared", private, main: "index.js"
+- [x] shared/index.js: tum modulleri re-export
+- [x] shared/gameConstants.js — Tum oyun sabitleri (doc 03 + doc 04):
   - TICK_RATE: 10, ARMY_SPEED: 25, SIEGE_DAMAGE_RATE: 2.0, SIEGE_ATTRITION_RATE: 0.3
   - DEFENSE_BONUS: 0.20, MAX_REGION_HP: 300, SPAWN_HP: 40, BASE_PRODUCTION_RATE: 1.0
   - Production rates: NORMAL=1.0, TOWER=1.5, MOUNTAIN=0.5, SNOW=0.8, SPEED=0.8, ROCKY=0, SPAWN=1.0, NEUTRAL=0.05
@@ -32,10 +32,10 @@
   - Spawn: SELECTION_TIME=15s, PREVIEW_TIME=3200ms, COUNTDOWN=3s
   - Matchmaking: ELO_RANGE=200, EXPAND_INTERVAL=15s
   - Player colors (16), Diamond rewards, ELO settings, Leagues, Network config
-- [ ] shared/eventTypes.js — 100+ Socket.IO event isimleri
-- [ ] shared/regionTypes.js — 7 bolge tipi: NORMAL, TOWER, SPAWN, MOUNTAIN, SNOW, ROCKY, SPEED
-- [ ] shared/version.js — { version: "2.0.0", codename: "BattleTab" }
-- [ ] Kabul: require('battletab-shared') calisir
+- [x] shared/eventTypes.js — 100+ Socket.IO event isimleri
+- [x] shared/regionTypes.js — 7 bolge tipi: NORMAL, TOWER, SPAWN, MOUNTAIN, SNOW, ROCKY, SPEED
+- [x] shared/version.js — { version: "2.0.0", codename: "BattleTab" }
+- [x] Kabul: require('battletab-shared') calisir
 
 ### P0.03 — Server package.json + dependencies (doc 06)
 - [ ] server/package.json: name "battletab-server", dependencies (bcryptjs, cors, dotenv, express, helmet, ioredis, jsonwebtoken, nanoid, pg, socket.io), devDeps (jest, nodemon)
