@@ -10,7 +10,7 @@ REMOTE_BASE="/Domains/battletab.frkn.com.tr"
 REMOTE_BACKEND="$REMOTE_BASE/backend"
 REMOTE_FRONTEND="$REMOTE_BASE/public_html"
 PM2_NAME="battletab"
-EXCLUDE="--exclude=node_modules --exclude=.git --exclude=.DS_Store --exclude=tests --exclude=docs --exclude=progress --exclude=.claude --exclude=hooks --exclude=claude_documentations --exclude=mobile --exclude=scripts --exclude=setup.sh --exclude=client/src --exclude=client/node_modules"
+EXCLUDE="--exclude=node_modules --exclude=.git --exclude=.DS_Store --exclude=.env --exclude=tests --exclude=docs --exclude=progress --exclude=.claude --exclude=hooks --exclude=claude_documentations --exclude=mobile --exclude=scripts --exclude=setup.sh --exclude=client/src --exclude=client/node_modules"
 
 MODE=${1:-all}
 
