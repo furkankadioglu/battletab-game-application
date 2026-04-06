@@ -14,3 +14,9 @@
 - regionTypes.js: 7 tip enum
 - version.js: v2.0.0
 - index.js: re-export hub
+
+### P0.03 — Server package.json + dependencies
+- 10 deps: express, socket.io, pg, ioredis, bcryptjs, jsonwebtoken, helmet, cors, dotenv, nanoid
+- 2 devDeps: jest, nodemon
+- .env.example: PORT, DATABASE_URL, REDIS_URL, JWT_SECRET, CORS_ORIGIN
+- 14+ server/src/ alt dizin yapisi olusturuldu

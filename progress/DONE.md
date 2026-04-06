@@ -17,3 +17,10 @@
 - shared/version.js: v2.0.0 BattleTab
 - shared/index.js: tum modulleri re-export
 - require('./shared') dogrulandi
+
+### P0.03 — Server package.json + dependencies
+- server/package.json: 10 dependencies + 2 devDeps
+- server/.env.example: tum env degiskenleri
+- server/src/ dizin yapisi: 14 alt klasor + game/entities, game/maps
+- server/db/migrations/ dizini
+- npm install: 143 paket, 0 vulnerability

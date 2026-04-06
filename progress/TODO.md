@@ -37,11 +37,11 @@
 - [x] shared/version.js — { version: "2.0.0", codename: "BattleTab" }
 - [x] Kabul: require('battletab-shared') calisir
 
-### P0.03 — Server package.json + dependencies (doc 06)
-- [ ] server/package.json: name "battletab-server", dependencies (bcryptjs, cors, dotenv, express, helmet, ioredis, jsonwebtoken, nanoid, pg, socket.io), devDeps (jest, nodemon)
-- [ ] server/.env.example: PORT, DATABASE_URL, REDIS_URL, JWT_SECRET, CORS_ORIGIN
-- [ ] server/src/ dizin yapisi: admin/, analytics/, auth/, config/, daily/, email/, friends/, game/, matchmaking/, ranking/, routes/, socket/, store/, utils/
-- [ ] Kabul: cd server && npm install hatasiz
+### P0.03 — Server package.json + dependencies (doc 06) [DONE]
+- [x] server/package.json: name "battletab-server", dependencies (bcryptjs, cors, dotenv, express, helmet, ioredis, jsonwebtoken, nanoid, pg, socket.io), devDeps (jest, nodemon)
+- [x] server/.env.example: PORT, DATABASE_URL, REDIS_URL, JWT_SECRET, CORS_ORIGIN
+- [x] server/src/ dizin yapisi: admin/, analytics/, auth/, config/, daily/, email/, friends/, game/, matchmaking/, ranking/, routes/, socket/, store/, utils/
+- [x] Kabul: cd server && npm install hatasiz
 
 ### P0.04 — Client package.json + Vite config (doc 07)
 - [ ] client/package.json: dependencies (capacitor, react 19, phaser 3.70, vite 5, socket.io-client)
