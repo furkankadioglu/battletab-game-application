@@ -1077,7 +1077,7 @@
 ## PHASE 11: Final & Deploy
 > Son testler, performans, production deploy.
 
-### P11.01 — Auto Performance Mode (client)
+### P11.01 [DONE] — Auto Performance Mode (client)
 - [ ] client/src/utils/performanceMonitor.js:
   - FPS sampling: start after 5s, check every 500ms
   - Trigger: average of 6+ samples < 30 FPS
@@ -1085,14 +1085,14 @@
   - Persist: localStorage battletab_low_perf
   - Re-check periodically, re-enable if FPS recovers
 
-### P11.02 — Full regression test suite
+### P11.02 [DONE] — Full regression test suite
 - [ ] Tum unit testler: npx jest --testPathPattern=unit
 - [ ] Tum integration testler: npx jest --testPathPattern=integration
 - [ ] E2E: full game flow (auth → menu → bot match → game over)
 - [ ] Visual: screenshot suite (auth, menu, game, HUD, game over)
 - [ ] Kabul: 0 fail
 
-### P11.03 — Full performance audit
+### P11.03 [DONE] — Full performance audit
 - [ ] Client: 60fps desktop, 30fps mobile
 - [ ] Server: < 10ms per tick (headroom for 10 tps)
 - [ ] Network: < 6 KB/s per player (delta compression)
@@ -1101,7 +1101,7 @@
 - [ ] Object pool utilization report
 - [ ] Kabul: Tum hedefler karsilanir
 
-### P11.04 — Production build + PM2 + VPS deploy
+### P11.04 [DONE] — Production build + PM2 + VPS deploy
 - [ ] Client: vite build → dist/ (sourcemap)
 - [ ] Server: ecosystem.config.js (PM2):
   - name: battletab-server
@@ -1114,7 +1114,7 @@
 - [ ] SSL certificate (Let's Encrypt)
 - [ ] Kabul: Production'da calisir
 
-### P11.05 — Production smoke test
+### P11.05 [DONE] — Production smoke test
 - [ ] Health check: curl /api/health → 200
 - [ ] Auth flow: register → verify → login
 - [ ] Bot match: start → spawn → play → game_over
@@ -1122,14 +1122,14 @@
 - [ ] Mobile: Capacitor build connects to production
 - [ ] Kabul: Production smoke PASS
 
-### P11.06 — Analytics baseline + monitoring
+### P11.06 [DONE] — Analytics baseline + monitoring
 - [ ] First analytics snapshot (manual)
 - [ ] Error log monitoring: check error_logs table
 - [ ] Uptime tracking: server_uptime records
 - [ ] Performance baseline recorded in PERF-LOG.md
 - [ ] Kabul: Monitoring aktif
 
-### P11.07 — Final rapor
+### P11.07 [DONE] — Final rapor
 - [ ] Test coverage raporu (jest --coverage)
 - [ ] Performance benchmark raporu (all tasks)
 - [ ] Screenshot suite raporu (all phases)
