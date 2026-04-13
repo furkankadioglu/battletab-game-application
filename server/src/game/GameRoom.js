@@ -11,7 +11,7 @@ const GameState = require('./GameState');
 const GameLoop = require('./GameLoop');
 const { generateMap } = require('./MapGenerator');
 const { findShortestPath } = require('./GateSystem');
-const { computeWaypoints, getRockyRegions } = require('./PathfindingSystem');
+const { VisibilityGraph, getRockyRegions } = require('./PathfindingSystem');
 const { calculateVisibility, canAttack } = require('./VisibilitySystem');
 const Region = require('./entities/Region');
 const Player = require('./entities/Player');
@@ -306,6 +306,11 @@ class GameRoom {
     // Mark all regions clean for delta tracking
     for (const r of this.gameState.regions.values()) r.markClean();
 
+    // Build visibility graph once — rocky regions never change during a game.
+    // Caches the O(m²) inter-candidate edge computation so onSendSoldiers
+    // only pays O(m) per army dispatch instead of O(m²).
+    this.visibilityGraph = new VisibilityGraph(getRockyRegions(this.gameState));
+
     this.gameLoop = new GameLoop(this.gameState, (events) => {
       this._broadcastState(events);
     });
@@ -322,8 +327,6 @@ class GameRoom {
 
     const targetRegion = this.gameState.getRegion(targetId);
     if (!targetRegion || targetRegion.type === regionTypes.ROCKY) return;
-
-    const rockyRegions = getRockyRegions(this.gameState);
 
     for (const sourceId of sourceIds) {
       const sourceRegion = this.gameState.getRegion(sourceId);
@@ -344,12 +347,14 @@ class GameRoom {
       // Gate routing
       const gateResult = findShortestPath(startPos, endPos, this.gameState.gates);
 
-      // Pathfinding around rocky
+      // Pathfinding around rocky — uses pre-built cached VisibilityGraph
       let waypoints;
       if (gateResult.useGate) {
         waypoints = [gateResult.waypoint, endPos];
       } else {
-        const rockyWaypoints = computeWaypoints(startPos, endPos, rockyRegions);
+        const rockyWaypoints = this.visibilityGraph
+          ? this.visibilityGraph.computeWaypoints(startPos, endPos)
+          : [];
         waypoints = [...rockyWaypoints, endPos];
       }
 
